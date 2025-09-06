@@ -1,0 +1,18 @@
+{
+  "name": "smartlead-categories-app",
+  "version": "1.0.0",
+  "description": "SmartLead Categories Reference Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
