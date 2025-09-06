@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Login Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .credentials-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .credentials-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .credentials-table th {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #000;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .credentials-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+
+        .credentials-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .platform {
+            font-weight: 600;
+        }
+
+        .url {
+            color: #333;
+            text-decoration: none;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        .url:hover {
+            text-decoration: underline;
+        }
+
+        .credentials {
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 13px;
+            background-color: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        .copy-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 4px 12px;
+            font-size: 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-left: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: #333;
+        }
+
+        .copy-btn:active {
+            background-color: #555;
+        }
+
+        .api-section {
+            background-color: #fafafa;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .api-key {
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 12px;
+            background-color: #fff;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+
+        .notes {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .important {
+            background-color: #000;
+            color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 30px;
+            font-size: 13px;
+        }
+
+        .important h3 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .credentials-table {
+                font-size: 12px;
+            }
+            
+            .credentials-table th,
+            .credentials-table td {
+                padding: 8px;
+            }
+
+            .copy-btn {
+                margin-top: 5px;
+                margin-left: 0;
+                display: block;
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Client Login Details</h1>
+        <p class="subtitle">Secure access credentials for all platforms and services</p>
+
+        <div class="credentials-section">
+            <h2 class="section-title">Database Access</h2>
+            <table class="credentials-table">
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>URL</th>
+                        <th>Credentials</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="platform">Supabase</td>
+                        <td><a href="https://zwelwodcoktuvgmaskug.supabase.co" class="url" target="_blank">zwelwodcoktuvgmaskug.supabase.co</a></td>
+                        <td>
+                            <span class="credentials">Service Role Key</span>
+                            <button class="copy-btn" onclick="copyToClipboard('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://supabase.com/dashboard/project/zwelwodcoktuvgmaskug', '_blank')">Open</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="credentials-section">
+            <h2 class="section-title">API Services</h2>
+            <table class="credentials-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Endpoint</th>
+                        <th>API Key</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="platform">SmartLead</td>
+                        <td><a href="https://server.smartlead.ai/api/v1" class="url" target="_blank">server.smartlead.ai/api/v1</a></td>
+                        <td>
+                            <span class="credentials">faef3d05-be9a-4056-abe3...</span>
+                            <button class="copy-btn" onclick="copyToClipboard('faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://app.smartlead.ai', '_blank')">Open</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="api-section">
+            <h2 class="section-title">Full API Keys</h2>
+            
+            <p style="margin: 10px 0;"><strong>Supabase Service Role Key:</strong></p>
+            <div class="api-key">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4</div>
+            
+            <p style="margin: 10px 0;"><strong>SmartLead API Key:</strong></p>
+            <div class="api-key">faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52</div>
+        </div>
+
+        <div class="credentials-section">
+            <h2 class="section-title">Database Information</h2>
+            <table class="credentials-table">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Value</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="platform">Project Name</td>
+                        <td><span class="credentials">zwelwodcoktuvgmaskug</span></td>
+                        <td class="notes">Supabase project identifier</td>
+                    </tr>
+                    <tr>
+                        <td class="platform">Total Tables</td>
+                        <td><span class="credentials">74</span></td>
+                        <td class="notes">Including campaign and reply tables</td>
+                    </tr>
+                    <tr>
+                        <td class="platform">Active Users</td>
+                        <td><span class="credentials">23</span></td>
+                        <td class="notes">Registered platform users</td>
+                    </tr>
+                    <tr>
+                        <td class="platform">SmartLead Categories</td>
+                        <td><span class="credentials">15</span></td>
+                        <td class="notes">9 standard, 6 custom</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="important">
+            <h3>Important Security Notice</h3>
+            <ul style="margin-left: 20px;">
+                <li>Never share these credentials publicly</li>
+                <li>Service role keys bypass Row Level Security</li>
+                <li>Rotate keys regularly for security</li>
+                <li>Use environment variables in production</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Last Updated: September 6, 2025 | Confidential - For Authorized Use Only</p>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerText;
+                button.innerText = 'Copied!';
+                button.style.backgroundColor = '#333';
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.backgroundColor = '#000';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        // Mask sensitive data on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click-to-reveal for sensitive data if needed
+            const apiKeys = document.querySelectorAll('.api-key');
+            apiKeys.forEach(key => {
+                key.style.cursor = 'pointer';
+                key.title = 'Click to select all';
+                key.addEventListener('click', function() {
+                    const range = document.createRange();
+                    range.selectNodeContents(this);
+                    const selection = window.getSelection();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

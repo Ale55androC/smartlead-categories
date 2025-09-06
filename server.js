@@ -7,35 +7,46 @@ const PORT = process.env.PORT || 3000;
 // Serve static files
 app.use(express.static(__dirname));
 
-// Main route
+// Main route - serve client login page
 app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client-login.html'));
+});
+
+// Alternative route for categories page if needed
+app.get('/categories', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// API endpoint to get categories data
-app.get('/api/categories', (req, res) => {
-    const categories = [
-        { id: 1, name: "Interested", type: "Standard", created_at: "2022-08-30T12:32:48.645Z" },
-        { id: 2, name: "Meeting Request", type: "Standard", created_at: "2022-08-30T12:32:55.159Z" },
-        { id: 3, name: "Not Interested", type: "Standard", created_at: "2022-08-30T12:33:02.286Z" },
-        { id: 4, name: "Do Not Contact", type: "Standard", created_at: "2022-08-30T12:33:09.895Z" },
-        { id: 5, name: "Information Request", type: "Standard", created_at: "2022-08-30T12:33:16.204Z" },
-        { id: 6, name: "Out Of Office", type: "Standard", created_at: "2022-08-30T12:33:22.323Z" },
-        { id: 7, name: "Wrong Person", type: "Standard", created_at: "2022-08-30T12:33:28.519Z" },
-        { id: 8, name: "Uncategorizable by Ai", type: "Standard", created_at: "2024-10-25T17:38:36.931Z" },
-        { id: 9, name: "Sender Originated Bounce", type: "Standard", created_at: "2025-03-20T22:07:34.290Z" },
-        { id: 1451, name: "Need to call", type: "Custom", created_at: "2023-08-02T08:15:57.288Z" },
-        { id: 1467, name: "Meeting Booked", type: "Custom", created_at: "2023-08-02T17:07:51.509Z" },
-        { id: 3241, name: "Long Term Follow Up", type: "Custom", created_at: "2023-11-28T11:02:41.148Z" },
-        { id: 8142, name: "VC Manual Application", type: "Custom", created_at: "2024-05-20T12:06:36.939Z" },
-        { id: 16691, name: "Mandate Information", type: "Custom", created_at: "2024-10-30T11:16:53.442Z" },
-        { id: 18199, name: "Deck sent", type: "Custom", created_at: "2025-01-06T15:10:43.078Z" }
-    ];
+// API endpoint to get credentials (protected in production)
+app.get('/api/credentials', (req, res) => {
+    // In production, this should be protected with authentication
+    const credentials = {
+        database: {
+            supabase: {
+                url: "https://zwelwodcoktuvgmaskug.supabase.co",
+                serviceRoleKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4",
+                projectId: "zwelwodcoktuvgmaskug"
+            }
+        },
+        api: {
+            smartlead: {
+                endpoint: "https://server.smartlead.ai/api/v1",
+                apiKey: "faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52"
+            }
+        },
+        stats: {
+            totalTables: 74,
+            activeUsers: 23,
+            smartleadCategories: 15,
+            campaigns: 100,
+            clients: 14
+        }
+    };
     
-    res.json(categories);
+    res.json(credentials);
 });
 
 app.listen(PORT, () => {
-    console.log(`🚀 SmartLead Categories app running on port ${PORT}`);
-    console.log(`📍 Visit http://localhost:${PORT} to view the categories`);
+    console.log(`🔒 Client Login Details app running on port ${PORT}`);
+    console.log(`📍 Visit http://localhost:${PORT} to view credentials`);
 });
