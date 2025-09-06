@@ -7,14 +7,14 @@ const PORT = process.env.PORT || 3000;
 // Serve static files
 app.use(express.static(__dirname));
 
-// Main route - serve client login page
+// Main route - serve index.html (which is now the login page)
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client-login.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Alternative route for categories page if needed
 app.get('/categories', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'categories.html'));
 });
 
 // API endpoint to get credentials (protected in production)

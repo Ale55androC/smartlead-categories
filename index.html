@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartLead Categories - Complete Reference</title>
+    <title>Client Login Details</title>
     <style>
         * {
             margin: 0;
@@ -12,471 +12,403 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 40px;
-            animation: fadeInDown 0.8s ease;
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
         }
 
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .stat-card .number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-card .label {
+        .subtitle {
             color: #666;
-            margin-top: 5px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 14px;
+            margin-bottom: 30px;
         }
 
-        .categories-section {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            animation: fadeInUp 1s ease;
+        .credentials-section {
+            margin-bottom: 40px;
         }
 
         .section-title {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
-        }
-
-        .categories-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-        }
-
-        .categories-table thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .categories-table th {
-            padding: 15px;
-            text-align: left;
+            font-size: 16px;
             font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .categories-table th:first-child {
-            border-top-left-radius: 8px;
+        .credentials-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
         }
 
-        .categories-table th:last-child {
-            border-top-right-radius: 8px;
+        .credentials-table th {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #000;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .categories-table tbody tr {
+        .credentials-table td {
+            padding: 12px;
             border-bottom: 1px solid #e0e0e0;
-            transition: all 0.3s ease;
+            font-size: 14px;
         }
 
-        .categories-table tbody tr:hover {
-            background-color: #f8f9ff;
-            transform: translateX(5px);
+        .credentials-table tr:hover {
+            background-color: #f9f9f9;
         }
 
-        .categories-table td {
-            padding: 15px;
+        .platform {
+            font-weight: 600;
+        }
+
+        .url {
             color: #333;
+            text-decoration: none;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 13px;
         }
 
-        .id-badge {
+        .url:hover {
+            text-decoration: underline;
+        }
+
+        .credentials {
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 13px;
+            background-color: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 3px;
             display: inline-block;
-            background: #667eea;
-            color: white;
+            margin: 2px 0;
+        }
+
+        .copy-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
             padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-left: 8px;
+            transition: background-color 0.2s;
         }
 
-        .type-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
+        .copy-btn:hover {
+            background-color: #333;
         }
 
-        .type-badge.standard {
-            background: #e3f2fd;
-            color: #1976d2;
+        .copy-btn:active {
+            background-color: #555;
         }
 
-        .type-badge.custom {
-            background: #f3e5f5;
-            color: #7b1fa2;
-        }
-
-        .date {
+        .notes {
+            font-size: 13px;
             color: #666;
-            font-size: 0.9rem;
+            font-style: italic;
         }
 
-        .usage-guide {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .important {
+            background-color: #000;
+            color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 30px;
+            font-size: 13px;
         }
 
-        .guide-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .guide-card h3 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .guide-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .guide-card li {
-            padding: 8px 0;
-            color: #555;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .guide-card li:last-child {
-            border-bottom: none;
-        }
-
-        .guide-card li strong {
-            color: #667eea;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .important h3 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #999;
             text-align: center;
-            color: white;
-            margin-top: 40px;
-            padding: 20px;
-            opacity: 0.9;
+        }
+
+        .credential-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8rem;
+            .credentials-table {
+                font-size: 12px;
             }
             
-            .categories-table {
-                font-size: 0.9rem;
+            .credentials-table th,
+            .credentials-table td {
+                padding: 8px;
             }
-            
-            .categories-table th,
-            .categories-table td {
-                padding: 10px;
+
+            .copy-btn {
+                margin-top: 5px;
+                margin-left: 0;
+                display: block;
+                width: 60px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🚀 SmartLead Categories Reference</h1>
-            <p>Complete list of lead categorization options for your campaigns</p>
-        </div>
+        <h1>Client Login Details</h1>
+        <p class="subtitle">Confidential access credentials - Handle with care</p>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="number">15</div>
-                <div class="label">Total Categories</div>
-            </div>
-            <div class="stat-card">
-                <div class="number">9</div>
-                <div class="label">Standard</div>
-            </div>
-            <div class="stat-card">
-                <div class="number">6</div>
-                <div class="label">Custom</div>
-            </div>
-            <div class="stat-card">
-                <div class="number">2022</div>
-                <div class="label">First Created</div>
-            </div>
-        </div>
-
-        <div class="categories-section">
-            <h2 class="section-title">📊 All SmartLead Categories</h2>
-            
-            <table class="categories-table">
+        <!-- Platform Logins -->
+        <div class="credentials-section">
+            <h2 class="section-title">Platform Access Credentials</h2>
+            <table class="credentials-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Category Name</th>
-                        <th>Type</th>
-                        <th>Created Date</th>
-                        <th>Purpose</th>
+                        <th>Platform</th>
+                        <th>URL</th>
+                        <th>Username / Email</th>
+                        <th>Password</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="id-badge">1</span></td>
-                        <td><strong>Interested</strong></td>
-                        <td><span class="type-badge standard">Standard</span></td>
-                        <td class="date">Aug 30, 2022</td>
-                        <td>Lead shows interest in offering</td>
+                        <td class="platform">SmartLead</td>
+                        <td><a href="https://app.smartlead.ai" class="url" target="_blank">app.smartlead.ai</a></td>
+                        <td>
+                            <span class="credentials">admin@venture.com</span>
+                            <button class="copy-btn" onclick="copyToClipboard('admin@venture.com', this)">Copy</button>
+                        </td>
+                        <td>
+                            <span class="credentials">VentureAccess2025!</span>
+                            <button class="copy-btn" onclick="copyToClipboard('VentureAccess2025!', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://app.smartlead.ai', '_blank')">Login</button>
+                        </td>
                     </tr>
                     <tr>
-                        <td><span class="id-badge">2</span></td>
-                        <td><strong>Meeting Request</strong></td>
-                        <td><span class="type-badge standard">Standard</span></td>
-                        <td class="date">Aug 30, 2022</td>
-                        <td>Lead wants to schedule meeting</td>
+                        <td class="platform">Supabase Dashboard</td>
+                        <td><a href="https://supabase.com/dashboard" class="url" target="_blank">supabase.com</a></td>
+                        <td>
+                            <span class="credentials">ventures@company.com</span>
+                            <button class="copy-btn" onclick="copyToClipboard('ventures@company.com', this)">Copy</button>
+                        </td>
+                        <td>
+                            <span class="credentials">Sup@base#Secure2025</span>
+                            <button class="copy-btn" onclick="copyToClipboard('Sup@base#Secure2025', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://supabase.com/dashboard/project/zwelwodcoktuvgmaskug', '_blank')">Login</button>
+                        </td>
                     </tr>
                     <tr>
-                        <td><span class="id-badge">3</span></td>
-                        <td><strong>Not Interested</strong></td>
-                        <td><span class="type-badge standard">Standard</span></td>
-                        <td class="date">Aug 30, 2022</td>
-                        <td>Lead explicitly declines</td>
+                        <td class="platform">Railway</td>
+                        <td><a href="https://railway.app" class="url" target="_blank">railway.app</a></td>
+                        <td>
+                            <span class="credentials">deploy@ventures.com</span>
+                            <button class="copy-btn" onclick="copyToClipboard('deploy@ventures.com', this)">Copy</button>
+                        </td>
+                        <td>
+                            <span class="credentials">Railway$Deploy#2025</span>
+                            <button class="copy-btn" onclick="copyToClipboard('Railway$Deploy#2025', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://railway.app/dashboard', '_blank')">Login</button>
+                        </td>
                     </tr>
                     <tr>
-                        <td><span class="id-badge">4</span></td>
-                        <td><strong>Do Not Contact</strong></td>
-                        <td><span class="type-badge standard">Standard</span></td>
-                        <td class="date">Aug 30, 2022</td>
-                        <td>Remove from outreach</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">5</span></td>
-                        <td><strong>Information Request</strong></td>
-                        <td><span class="type-badge standard">Standard</span></td>
-                        <td class="date">Aug 30, 2022</td>
-                        <td>Lead wants more details</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">6</span></td>
-                        <td><strong>Out Of Office</strong></td>
-                        <td><span class="type-badge standard">Standard</span></td>
-                        <td class="date">Aug 30, 2022</td>
-                        <td>Automated OOO replies</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">7</span></td>
-                        <td><strong>Wrong Person</strong></td>
-                        <td><span class="type-badge standard">Standard</span></td>
-                        <td class="date">Aug 30, 2022</td>
-                        <td>Incorrect contact reached</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">8</span></td>
-                        <td><strong>Uncategorizable by AI</strong></td>
-                        <td><span class="type-badge standard">Standard</span></td>
-                        <td class="date">Oct 25, 2024</td>
-                        <td>AI cannot determine category</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">9</span></td>
-                        <td><strong>Sender Originated Bounce</strong></td>
-                        <td><span class="type-badge standard">Standard</span></td>
-                        <td class="date">Mar 20, 2025</td>
-                        <td>Email delivery failure</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">1451</span></td>
-                        <td><strong>Need to call</strong></td>
-                        <td><span class="type-badge custom">Custom</span></td>
-                        <td class="date">Aug 2, 2023</td>
-                        <td>Requires phone follow-up</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">1467</span></td>
-                        <td><strong>Meeting Booked</strong></td>
-                        <td><span class="type-badge custom">Custom</span></td>
-                        <td class="date">Aug 2, 2023</td>
-                        <td>Meeting successfully scheduled</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">3241</span></td>
-                        <td><strong>Long Term Follow Up</strong></td>
-                        <td><span class="type-badge custom">Custom</span></td>
-                        <td class="date">Nov 28, 2023</td>
-                        <td>Nurture for future opportunity</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">8142</span></td>
-                        <td><strong>VC Manual Application</strong></td>
-                        <td><span class="type-badge custom">Custom</span></td>
-                        <td class="date">May 20, 2024</td>
-                        <td>VC application process</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">16691</span></td>
-                        <td><strong>Mandate Information</strong></td>
-                        <td><span class="type-badge custom">Custom</span></td>
-                        <td class="date">Oct 30, 2024</td>
-                        <td>Investment mandate details</td>
-                    </tr>
-                    <tr>
-                        <td><span class="id-badge">18199</span></td>
-                        <td><strong>Deck sent</strong></td>
-                        <td><span class="type-badge custom">Custom</span></td>
-                        <td class="date">Jan 6, 2025</td>
-                        <td>Pitch deck delivered</td>
+                        <td class="platform">GitHub</td>
+                        <td><a href="https://github.com" class="url" target="_blank">github.com</a></td>
+                        <td>
+                            <span class="credentials">Ale55androC</span>
+                            <button class="copy-btn" onclick="copyToClipboard('Ale55androC', this)">Copy</button>
+                        </td>
+                        <td>
+                            <span class="credentials">GitHub#Venture2025</span>
+                            <button class="copy-btn" onclick="copyToClipboard('GitHub#Venture2025', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://github.com/login', '_blank')">Login</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="usage-guide">
-            <div class="guide-card">
-                <h3>🎯 High-Value Categories</h3>
-                <ul>
-                    <li><strong>ID 1:</strong> Interested - Track warm leads</li>
-                    <li><strong>ID 2:</strong> Meeting Request - High intent</li>
-                    <li><strong>ID 1467:</strong> Meeting Booked - Conversion</li>
-                    <li><strong>ID 8142:</strong> VC Manual Application</li>
-                    <li><strong>ID 18199:</strong> Deck sent - Deal progress</li>
-                </ul>
-            </div>
-            
-            <div class="guide-card">
-                <h3>📞 Follow-up Required</h3>
-                <ul>
-                    <li><strong>ID 5:</strong> Information Request</li>
-                    <li><strong>ID 1451:</strong> Need to call</li>
-                    <li><strong>ID 3241:</strong> Long Term Follow Up</li>
-                    <li><strong>ID 16691:</strong> Mandate Information</li>
-                </ul>
-            </div>
-            
-            <div class="guide-card">
-                <h3>❌ Exclude from Outreach</h3>
-                <ul>
-                    <li><strong>ID 3:</strong> Not Interested</li>
-                    <li><strong>ID 4:</strong> Do Not Contact</li>
-                    <li><strong>ID 6:</strong> Out Of Office</li>
-                    <li><strong>ID 7:</strong> Wrong Person</li>
-                    <li><strong>ID 9:</strong> Sender Originated Bounce</li>
-                </ul>
-            </div>
+        <!-- Database Credentials -->
+        <div class="credentials-section">
+            <h2 class="section-title">Database Connection Details</h2>
+            <table class="credentials-table">
+                <thead>
+                    <tr>
+                        <th>Database</th>
+                        <th>Host</th>
+                        <th>Credentials</th>
+                        <th>Connection String</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="platform">PostgreSQL (Supabase)</td>
+                        <td><span class="credentials">db.zwelwodcoktuvgmaskug.supabase.co</span></td>
+                        <td>
+                            <div class="credential-group">
+                                <div>User: <span class="credentials">postgres</span></div>
+                                <div>Pass: <span class="credentials">VentureDB#2025</span></div>
+                                <div>Port: <span class="credentials">5432</span></div>
+                                <div>Database: <span class="credentials">postgres</span></div>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="copyToClipboard('postgresql://postgres:VentureDB#2025@db.zwelwodcoktuvgmaskug.supabase.co:5432/postgres', this)">Copy</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- API Keys -->
+        <div class="credentials-section">
+            <h2 class="section-title">API Keys & Tokens</h2>
+            <table class="credentials-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Key Type</th>
+                        <th>Value</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="platform">Supabase</td>
+                        <td>Service Role Key</td>
+                        <td>
+                            <span class="credentials" style="font-size: 11px;">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4</span>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="copyToClipboard('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4', this)">Copy</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="platform">Supabase</td>
+                        <td>Anon Key</td>
+                        <td>
+                            <span class="credentials" style="font-size: 11px;">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNTcxNTgsImV4cCI6MjA2NzYzMzE1OH0.4pV8hQd7NXbqY3O_XK5fRmJyT7P9KH4vGxRQWzNM8Xs</span>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="copyToClipboard('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNTcxNTgsImV4cCI6MjA2NzYzMzE1OH0.4pV8hQd7NXbqY3O_XK5fRmJyT7P9KH4vGxRQWzNM8Xs', this)">Copy</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="platform">SmartLead</td>
+                        <td>API Key</td>
+                        <td>
+                            <span class="credentials">faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52</span>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="copyToClipboard('faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52', this)">Copy</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Client Access -->
+        <div class="credentials-section">
+            <h2 class="section-title">Client Portal Access</h2>
+            <table class="credentials-table">
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Portal URL</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="platform">1414 Ventures</td>
+                        <td><a href="#" class="url">portal.ventures.com/1414</a></td>
+                        <td><span class="credentials">1414ventures</span></td>
+                        <td><span class="credentials">Venture1414!</span></td>
+                        <td class="notes">Primary account</td>
+                    </tr>
+                    <tr>
+                        <td class="platform">1818 Ventures</td>
+                        <td><a href="#" class="url">portal.ventures.com/1818</a></td>
+                        <td><span class="credentials">1818ventures</span></td>
+                        <td><span class="credentials">Venture1818!</span></td>
+                        <td class="notes">Active campaigns</td>
+                    </tr>
+                    <tr>
+                        <td class="platform">Mobilion Ventures</td>
+                        <td><a href="#" class="url">portal.ventures.com/mobilion</a></td>
+                        <td><span class="credentials">mobilion</span></td>
+                        <td><span class="credentials">Mobilion2025!</span></td>
+                        <td class="notes">Largest dataset</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="important">
+            <h3>Security Guidelines</h3>
+            <ul style="margin-left: 20px;">
+                <li>Change all passwords immediately upon first login</li>
+                <li>Enable 2FA on all platforms where available</li>
+                <li>Never share credentials via email or messaging apps</li>
+                <li>Use password manager for secure storage</li>
+                <li>Rotate API keys every 90 days</li>
+            </ul>
         </div>
 
         <div class="footer">
-            <p>SmartLead Categories Reference • API Key: faef3d05-be9a-4056-abe3...</p>
-            <p>Last Updated: September 6, 2025</p>
+            <p>Last Updated: September 6, 2025 | Confidential - For Internal Use Only</p>
+            <p>Report any suspicious activity immediately</p>
         </div>
     </div>
 
     <script>
-        // Add interactive features
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate numbers on page load
-            const numbers = document.querySelectorAll('.stat-card .number');
-            numbers.forEach(num => {
-                const target = parseInt(num.innerText);
-                let current = 0;
-                const increment = target / 30;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        num.innerText = target;
-                        clearInterval(timer);
-                    } else {
-                        num.innerText = Math.floor(current);
-                    }
-                }, 30);
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerText;
+                button.innerText = 'Copied!';
+                button.style.backgroundColor = '#333';
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.backgroundColor = '#000';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
             });
-
-            // Add click to copy ID functionality
-            const idBadges = document.querySelectorAll('.id-badge');
-            idBadges.forEach(badge => {
-                badge.style.cursor = 'pointer';
-                badge.title = 'Click to copy ID';
-                badge.addEventListener('click', function() {
-                    const id = this.innerText;
-                    navigator.clipboard.writeText(id).then(() => {
-                        const original = this.innerText;
-                        this.innerText = 'Copied!';
-                        this.style.background = '#4caf50';
-                        setTimeout(() => {
-                            this.innerText = original;
-                            this.style.background = '#667eea';
-                        }, 1500);
-                    });
-                });
-            });
-        });
+        }
     </script>
 </body>
 </html>
