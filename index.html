@@ -20,395 +20,530 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         h1 {
             font-size: 24px;
             font-weight: 600;
-            margin-bottom: 8px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .subtitle {
-            color: #666;
-            font-size: 14px;
             margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #000;
         }
 
-        .credentials-section {
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
             margin-bottom: 40px;
         }
 
-        .section-title {
-            font-size: 16px;
+        .client-card {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            background: #fafafa;
+        }
+
+        .client-card:hover {
+            background: #f5f5f5;
+            border-color: #000;
+        }
+
+        .client-name {
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #d0d0d0;
+            padding-bottom: 8px;
+        }
+
+        .credential-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .credential-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .credential-label {
+            font-weight: 600;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-
-        .credentials-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-        }
-
-        .credentials-table th {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 2px solid #000;
-            font-weight: 600;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .credentials-table td {
-            padding: 12px;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 14px;
-        }
-
-        .credentials-table tr:hover {
-            background-color: #f9f9f9;
-        }
-
-        .platform {
-            font-weight: 600;
-        }
-
-        .url {
-            color: #333;
-            text-decoration: none;
-            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
-            font-size: 13px;
-        }
-
-        .url:hover {
-            text-decoration: underline;
-        }
-
-        .credentials {
-            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
-            font-size: 13px;
-            background-color: #f5f5f5;
-            padding: 4px 8px;
-            border-radius: 3px;
-            display: inline-block;
-            margin: 2px 0;
-        }
-
-        .copy-btn {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 4px 12px;
-            font-size: 12px;
-            border-radius: 3px;
-            cursor: pointer;
-            margin-left: 8px;
-            transition: background-color 0.2s;
-        }
-
-        .copy-btn:hover {
-            background-color: #333;
-        }
-
-        .copy-btn:active {
-            background-color: #555;
-        }
-
-        .notes {
-            font-size: 13px;
             color: #666;
-            font-style: italic;
         }
 
-        .important {
-            background-color: #000;
-            color: #fff;
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 30px;
-            font-size: 13px;
-        }
-
-        .important h3 {
-            margin-bottom: 10px;
+        .credential-value {
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
             font-size: 14px;
+            background: #fff;
+            padding: 4px 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .login-btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            margin-top: 15px;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-            font-size: 12px;
-            color: #999;
+            width: 100%;
             text-align: center;
         }
 
-        .credential-group {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
+        .login-btn:hover {
+            background: #333;
         }
 
-        @media (max-width: 768px) {
-            .credentials-table {
-                font-size: 12px;
-            }
-            
-            .credentials-table th,
-            .credentials-table td {
-                padding: 8px;
-            }
+        .quick-links {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
 
-            .copy-btn {
-                margin-top: 5px;
-                margin-left: 0;
-                display: block;
-                width: 60px;
-            }
+        .quick-links-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+
+        .quick-link {
+            font-size: 12px;
+            color: #333;
+            text-decoration: none;
+            padding: 4px;
+            background: #f8f8f8;
+            border: 1px solid #e8e8e8;
+            text-align: center;
+        }
+
+        .quick-link:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .summary {
+            background: #f5f5f5;
+            border: 2px solid #000;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .summary h2 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-number {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .summary-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+
+        .instructions h3 {
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Client Login Details</h1>
-        <p class="subtitle">Confidential access credentials - Handle with care</p>
+        <h1>CLIENT LOGIN DETAILS</h1>
 
-        <!-- Platform Logins -->
-        <div class="credentials-section">
-            <h2 class="section-title">Platform Access Credentials</h2>
-            <table class="credentials-table">
-                <thead>
-                    <tr>
-                        <th>Platform</th>
-                        <th>URL</th>
-                        <th>Username / Email</th>
-                        <th>Password</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="platform">SmartLead</td>
-                        <td><a href="https://app.smartlead.ai" class="url" target="_blank">app.smartlead.ai</a></td>
-                        <td>
-                            <span class="credentials">admin@venture.com</span>
-                            <button class="copy-btn" onclick="copyToClipboard('admin@venture.com', this)">Copy</button>
-                        </td>
-                        <td>
-                            <span class="credentials">VentureAccess2025!</span>
-                            <button class="copy-btn" onclick="copyToClipboard('VentureAccess2025!', this)">Copy</button>
-                        </td>
-                        <td>
-                            <button class="copy-btn" onclick="window.open('https://app.smartlead.ai', '_blank')">Login</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="platform">Supabase Dashboard</td>
-                        <td><a href="https://supabase.com/dashboard" class="url" target="_blank">supabase.com</a></td>
-                        <td>
-                            <span class="credentials">ventures@company.com</span>
-                            <button class="copy-btn" onclick="copyToClipboard('ventures@company.com', this)">Copy</button>
-                        </td>
-                        <td>
-                            <span class="credentials">Sup@base#Secure2025</span>
-                            <button class="copy-btn" onclick="copyToClipboard('Sup@base#Secure2025', this)">Copy</button>
-                        </td>
-                        <td>
-                            <button class="copy-btn" onclick="window.open('https://supabase.com/dashboard/project/zwelwodcoktuvgmaskug', '_blank')">Login</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="platform">Railway</td>
-                        <td><a href="https://railway.app" class="url" target="_blank">railway.app</a></td>
-                        <td>
-                            <span class="credentials">deploy@ventures.com</span>
-                            <button class="copy-btn" onclick="copyToClipboard('deploy@ventures.com', this)">Copy</button>
-                        </td>
-                        <td>
-                            <span class="credentials">Railway$Deploy#2025</span>
-                            <button class="copy-btn" onclick="copyToClipboard('Railway$Deploy#2025', this)">Copy</button>
-                        </td>
-                        <td>
-                            <button class="copy-btn" onclick="window.open('https://railway.app/dashboard', '_blank')">Login</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="platform">GitHub</td>
-                        <td><a href="https://github.com" class="url" target="_blank">github.com</a></td>
-                        <td>
-                            <span class="credentials">Ale55androC</span>
-                            <button class="copy-btn" onclick="copyToClipboard('Ale55androC', this)">Copy</button>
-                        </td>
-                        <td>
-                            <span class="credentials">GitHub#Venture2025</span>
-                            <button class="copy-btn" onclick="copyToClipboard('GitHub#Venture2025', this)">Copy</button>
-                        </td>
-                        <td>
-                            <button class="copy-btn" onclick="window.open('https://github.com/login', '_blank')">Login</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="clients-grid">
+            <div class="client-card">
+                <div class="client-name">1818 Ventures</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">31767</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">1818 Ventures2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/31767/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/31767/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/31767/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/31767/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">1414 Ventures</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">12583</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">1414 Ventures2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/12583/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/12583/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/12583/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/12583/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">2.0 Ventures</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">42818</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">2.0 Ventures2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/42818/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/42818/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/42818/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/42818/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">Eastend Ventures</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">123338</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">Eastend Ventures2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/123338/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/123338/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/123338/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/123338/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">Lionheart</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">30350</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">Lionheart2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/30350/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/30350/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/30350/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/30350/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">Hanehouse</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">23251</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">Hanehouse2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/23251/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/23251/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/23251/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/23251/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">Insurtech</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">53593</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">Insurtech2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/53593/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/53593/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/53593/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/53593/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">Neurable</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">111007</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">Neurable2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/111007/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/111007/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/111007/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/111007/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">PIP</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">124530</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">PIP2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/124530/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/124530/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/124530/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/124530/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">Stormbreaker Ventures</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">50983</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">Stormbreaker Ventures2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/50983/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/50983/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/50983/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/50983/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">Vensa</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">29247</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">Vensa2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/29247/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/29247/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/29247/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/29247/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">Mobilion Ventures</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">16420</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">Mobilion Ventures2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/16420/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/16420/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/16420/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/16420/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">ATV</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">56613</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">ATV2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/56613/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/56613/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/56613/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/56613/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-name">Carnation Capital</div>
+                <div class="credential-row">
+                    <span class="credential-label">Client ID</span>
+                    <span class="credential-value">68624</span>
+                </div>
+                <div class="credential-row">
+                    <span class="credential-label">Password</span>
+                    <span class="credential-value">Carnation Capital2025</span>
+                </div>
+                <a href="https://integrate-fund-flow.lovable.app/auth" target="_blank" class="login-btn">LOGIN →</a>
+                <div class="quick-links">
+                    <div class="quick-links-title">Quick Access</div>
+                    <div class="link-grid">
+                        <a href="https://integrate-fund-flow.lovable.app/68624/dashboard" target="_blank" class="quick-link">Dashboard</a>
+                        <a href="https://integrate-fund-flow.lovable.app/68624/capital-campaigns" target="_blank" class="quick-link">Campaigns</a>
+                        <a href="https://integrate-fund-flow.lovable.app/68624/pipeline" target="_blank" class="quick-link">Pipeline</a>
+                        <a href="https://integrate-fund-flow.lovable.app/68624/calendar" target="_blank" class="quick-link">Calendar</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Database Credentials -->
-        <div class="credentials-section">
-            <h2 class="section-title">Database Connection Details</h2>
-            <table class="credentials-table">
-                <thead>
-                    <tr>
-                        <th>Database</th>
-                        <th>Host</th>
-                        <th>Credentials</th>
-                        <th>Connection String</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="platform">PostgreSQL (Supabase)</td>
-                        <td><span class="credentials">db.zwelwodcoktuvgmaskug.supabase.co</span></td>
-                        <td>
-                            <div class="credential-group">
-                                <div>User: <span class="credentials">postgres</span></div>
-                                <div>Pass: <span class="credentials">VentureDB#2025</span></div>
-                                <div>Port: <span class="credentials">5432</span></div>
-                                <div>Database: <span class="credentials">postgres</span></div>
-                            </div>
-                        </td>
-                        <td>
-                            <button class="copy-btn" onclick="copyToClipboard('postgresql://postgres:VentureDB#2025@db.zwelwodcoktuvgmaskug.supabase.co:5432/postgres', this)">Copy</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="summary">
+            <h2>Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-number">14</div>
+                    <div class="summary-label">Total Clients</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">9</div>
+                    <div class="summary-label">Pages per Client</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">126</div>
+                    <div class="summary-label">Total Links</div>
+                </div>
+            </div>
         </div>
 
-        <!-- API Keys -->
-        <div class="credentials-section">
-            <h2 class="section-title">API Keys & Tokens</h2>
-            <table class="credentials-table">
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Key Type</th>
-                        <th>Value</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="platform">Supabase</td>
-                        <td>Service Role Key</td>
-                        <td>
-                            <span class="credentials" style="font-size: 11px;">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4</span>
-                        </td>
-                        <td>
-                            <button class="copy-btn" onclick="copyToClipboard('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4', this)">Copy</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="platform">Supabase</td>
-                        <td>Anon Key</td>
-                        <td>
-                            <span class="credentials" style="font-size: 11px;">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNTcxNTgsImV4cCI6MjA2NzYzMzE1OH0.4pV8hQd7NXbqY3O_XK5fRmJyT7P9KH4vGxRQWzNM8Xs</span>
-                        </td>
-                        <td>
-                            <button class="copy-btn" onclick="copyToClipboard('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNTcxNTgsImV4cCI6MjA2NzYzMzE1OH0.4pV8hQd7NXbqY3O_XK5fRmJyT7P9KH4vGxRQWzNM8Xs', this)">Copy</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="platform">SmartLead</td>
-                        <td>API Key</td>
-                        <td>
-                            <span class="credentials">faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52</span>
-                        </td>
-                        <td>
-                            <button class="copy-btn" onclick="copyToClipboard('faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52', this)">Copy</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Client Access -->
-        <div class="credentials-section">
-            <h2 class="section-title">Client Portal Access</h2>
-            <table class="credentials-table">
-                <thead>
-                    <tr>
-                        <th>Client</th>
-                        <th>Portal URL</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="platform">1414 Ventures</td>
-                        <td><a href="#" class="url">portal.ventures.com/1414</a></td>
-                        <td><span class="credentials">1414ventures</span></td>
-                        <td><span class="credentials">Venture1414!</span></td>
-                        <td class="notes">Primary account</td>
-                    </tr>
-                    <tr>
-                        <td class="platform">1818 Ventures</td>
-                        <td><a href="#" class="url">portal.ventures.com/1818</a></td>
-                        <td><span class="credentials">1818ventures</span></td>
-                        <td><span class="credentials">Venture1818!</span></td>
-                        <td class="notes">Active campaigns</td>
-                    </tr>
-                    <tr>
-                        <td class="platform">Mobilion Ventures</td>
-                        <td><a href="#" class="url">portal.ventures.com/mobilion</a></td>
-                        <td><span class="credentials">mobilion</span></td>
-                        <td><span class="credentials">Mobilion2025!</span></td>
-                        <td class="notes">Largest dataset</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="important">
-            <h3>Security Guidelines</h3>
-            <ul style="margin-left: 20px;">
-                <li>Change all passwords immediately upon first login</li>
-                <li>Enable 2FA on all platforms where available</li>
-                <li>Never share credentials via email or messaging apps</li>
-                <li>Use password manager for secure storage</li>
-                <li>Rotate API keys every 90 days</li>
-            </ul>
-        </div>
-
-        <div class="footer">
-            <p>Last Updated: September 6, 2025 | Confidential - For Internal Use Only</p>
-            <p>Report any suspicious activity immediately</p>
+        <div class="instructions">
+            <h3>How to Login</h3>
+            <ol>
+                <li>Click the LOGIN button for your client</li>
+                <li>Enter the Client ID (e.g., 31767)</li>
+                <li>Enter the Password (Client Name + 2025)</li>
+                <li>Click Login to access the dashboard</li>
+                <li>Use Quick Access links for direct navigation (after logging in)</li>
+            </ol>
         </div>
     </div>
-
-    <script>
-        function copyToClipboard(text, button) {
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = button.innerText;
-                button.innerText = 'Copied!';
-                button.style.backgroundColor = '#333';
-                setTimeout(() => {
-                    button.innerText = originalText;
-                    button.style.backgroundColor = '#000';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-        }
-    </script>
 </body>
 </html>
