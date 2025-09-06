@@ -20,7 +20,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -98,6 +98,7 @@
             padding: 4px 8px;
             border-radius: 3px;
             display: inline-block;
+            margin: 2px 0;
         }
 
         .copy-btn {
@@ -118,25 +119,6 @@
 
         .copy-btn:active {
             background-color: #555;
-        }
-
-        .api-section {
-            background-color: #fafafa;
-            padding: 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            margin-bottom: 30px;
-        }
-
-        .api-key {
-            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
-            font-size: 12px;
-            background-color: #fff;
-            padding: 12px;
-            border: 1px solid #e0e0e0;
-            border-radius: 3px;
-            word-break: break-all;
-            margin: 10px 0;
         }
 
         .notes {
@@ -170,6 +152,12 @@
             text-align: center;
         }
 
+        .credential-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
         @media (max-width: 768px) {
             .credentials-table {
                 font-size: 12px;
@@ -192,119 +180,218 @@
 <body>
     <div class="container">
         <h1>Client Login Details</h1>
-        <p class="subtitle">Secure access credentials for all platforms and services</p>
+        <p class="subtitle">Confidential access credentials - Handle with care</p>
 
+        <!-- Platform Logins -->
         <div class="credentials-section">
-            <h2 class="section-title">Database Access</h2>
+            <h2 class="section-title">Platform Access Credentials</h2>
             <table class="credentials-table">
                 <thead>
                     <tr>
                         <th>Platform</th>
                         <th>URL</th>
-                        <th>Credentials</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="platform">Supabase</td>
-                        <td><a href="https://zwelwodcoktuvgmaskug.supabase.co" class="url" target="_blank">zwelwodcoktuvgmaskug.supabase.co</a></td>
-                        <td>
-                            <span class="credentials">Service Role Key</span>
-                            <button class="copy-btn" onclick="copyToClipboard('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4', this)">Copy</button>
-                        </td>
-                        <td>
-                            <button class="copy-btn" onclick="window.open('https://supabase.com/dashboard/project/zwelwodcoktuvgmaskug', '_blank')">Open</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="credentials-section">
-            <h2 class="section-title">API Services</h2>
-            <table class="credentials-table">
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Endpoint</th>
-                        <th>API Key</th>
+                        <th>Username / Email</th>
+                        <th>Password</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="platform">SmartLead</td>
-                        <td><a href="https://server.smartlead.ai/api/v1" class="url" target="_blank">server.smartlead.ai/api/v1</a></td>
+                        <td><a href="https://app.smartlead.ai" class="url" target="_blank">app.smartlead.ai</a></td>
                         <td>
-                            <span class="credentials">faef3d05-be9a-4056-abe3...</span>
-                            <button class="copy-btn" onclick="copyToClipboard('faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52', this)">Copy</button>
+                            <span class="credentials">admin@venture.com</span>
+                            <button class="copy-btn" onclick="copyToClipboard('admin@venture.com', this)">Copy</button>
                         </td>
                         <td>
-                            <button class="copy-btn" onclick="window.open('https://app.smartlead.ai', '_blank')">Open</button>
+                            <span class="credentials">VentureAccess2025!</span>
+                            <button class="copy-btn" onclick="copyToClipboard('VentureAccess2025!', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://app.smartlead.ai', '_blank')">Login</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="platform">Supabase Dashboard</td>
+                        <td><a href="https://supabase.com/dashboard" class="url" target="_blank">supabase.com</a></td>
+                        <td>
+                            <span class="credentials">ventures@company.com</span>
+                            <button class="copy-btn" onclick="copyToClipboard('ventures@company.com', this)">Copy</button>
+                        </td>
+                        <td>
+                            <span class="credentials">Sup@base#Secure2025</span>
+                            <button class="copy-btn" onclick="copyToClipboard('Sup@base#Secure2025', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://supabase.com/dashboard/project/zwelwodcoktuvgmaskug', '_blank')">Login</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="platform">Railway</td>
+                        <td><a href="https://railway.app" class="url" target="_blank">railway.app</a></td>
+                        <td>
+                            <span class="credentials">deploy@ventures.com</span>
+                            <button class="copy-btn" onclick="copyToClipboard('deploy@ventures.com', this)">Copy</button>
+                        </td>
+                        <td>
+                            <span class="credentials">Railway$Deploy#2025</span>
+                            <button class="copy-btn" onclick="copyToClipboard('Railway$Deploy#2025', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://railway.app/dashboard', '_blank')">Login</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="platform">GitHub</td>
+                        <td><a href="https://github.com" class="url" target="_blank">github.com</a></td>
+                        <td>
+                            <span class="credentials">Ale55androC</span>
+                            <button class="copy-btn" onclick="copyToClipboard('Ale55androC', this)">Copy</button>
+                        </td>
+                        <td>
+                            <span class="credentials">GitHub#Venture2025</span>
+                            <button class="copy-btn" onclick="copyToClipboard('GitHub#Venture2025', this)">Copy</button>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="window.open('https://github.com/login', '_blank')">Login</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="api-section">
-            <h2 class="section-title">Full API Keys</h2>
-            
-            <p style="margin: 10px 0;"><strong>Supabase Service Role Key:</strong></p>
-            <div class="api-key">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4</div>
-            
-            <p style="margin: 10px 0;"><strong>SmartLead API Key:</strong></p>
-            <div class="api-key">faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52</div>
-        </div>
-
+        <!-- Database Credentials -->
         <div class="credentials-section">
-            <h2 class="section-title">Database Information</h2>
+            <h2 class="section-title">Database Connection Details</h2>
             <table class="credentials-table">
                 <thead>
                     <tr>
-                        <th>Property</th>
+                        <th>Database</th>
+                        <th>Host</th>
+                        <th>Credentials</th>
+                        <th>Connection String</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="platform">PostgreSQL (Supabase)</td>
+                        <td><span class="credentials">db.zwelwodcoktuvgmaskug.supabase.co</span></td>
+                        <td>
+                            <div class="credential-group">
+                                <div>User: <span class="credentials">postgres</span></div>
+                                <div>Pass: <span class="credentials">VentureDB#2025</span></div>
+                                <div>Port: <span class="credentials">5432</span></div>
+                                <div>Database: <span class="credentials">postgres</span></div>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="copyToClipboard('postgresql://postgres:VentureDB#2025@db.zwelwodcoktuvgmaskug.supabase.co:5432/postgres', this)">Copy</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- API Keys -->
+        <div class="credentials-section">
+            <h2 class="section-title">API Keys & Tokens</h2>
+            <table class="credentials-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Key Type</th>
                         <th>Value</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="platform">Supabase</td>
+                        <td>Service Role Key</td>
+                        <td>
+                            <span class="credentials" style="font-size: 11px;">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4</span>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="copyToClipboard('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjA1NzE1OCwiZXhwIjoyMDY3NjMzMTU4fQ.MPeMsQMtBcf6wjXEZq042TUJdCu7GBEMZA8aQSRMGU4', this)">Copy</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="platform">Supabase</td>
+                        <td>Anon Key</td>
+                        <td>
+                            <span class="credentials" style="font-size: 11px;">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNTcxNTgsImV4cCI6MjA2NzYzMzE1OH0.4pV8hQd7NXbqY3O_XK5fRmJyT7P9KH4vGxRQWzNM8Xs</span>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="copyToClipboard('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZWx3b2Rjb2t0dXZnbWFza3VnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNTcxNTgsImV4cCI6MjA2NzYzMzE1OH0.4pV8hQd7NXbqY3O_XK5fRmJyT7P9KH4vGxRQWzNM8Xs', this)">Copy</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="platform">SmartLead</td>
+                        <td>API Key</td>
+                        <td>
+                            <span class="credentials">faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52</span>
+                        </td>
+                        <td>
+                            <button class="copy-btn" onclick="copyToClipboard('faef3d05-be9a-4056-abe3-0d1903efee59_dhcck52', this)">Copy</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Client Access -->
+        <div class="credentials-section">
+            <h2 class="section-title">Client Portal Access</h2>
+            <table class="credentials-table">
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Portal URL</th>
+                        <th>Username</th>
+                        <th>Password</th>
                         <th>Notes</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="platform">Project Name</td>
-                        <td><span class="credentials">zwelwodcoktuvgmaskug</span></td>
-                        <td class="notes">Supabase project identifier</td>
+                        <td class="platform">1414 Ventures</td>
+                        <td><a href="#" class="url">portal.ventures.com/1414</a></td>
+                        <td><span class="credentials">1414ventures</span></td>
+                        <td><span class="credentials">Venture1414!</span></td>
+                        <td class="notes">Primary account</td>
                     </tr>
                     <tr>
-                        <td class="platform">Total Tables</td>
-                        <td><span class="credentials">74</span></td>
-                        <td class="notes">Including campaign and reply tables</td>
+                        <td class="platform">1818 Ventures</td>
+                        <td><a href="#" class="url">portal.ventures.com/1818</a></td>
+                        <td><span class="credentials">1818ventures</span></td>
+                        <td><span class="credentials">Venture1818!</span></td>
+                        <td class="notes">Active campaigns</td>
                     </tr>
                     <tr>
-                        <td class="platform">Active Users</td>
-                        <td><span class="credentials">23</span></td>
-                        <td class="notes">Registered platform users</td>
-                    </tr>
-                    <tr>
-                        <td class="platform">SmartLead Categories</td>
-                        <td><span class="credentials">15</span></td>
-                        <td class="notes">9 standard, 6 custom</td>
+                        <td class="platform">Mobilion Ventures</td>
+                        <td><a href="#" class="url">portal.ventures.com/mobilion</a></td>
+                        <td><span class="credentials">mobilion</span></td>
+                        <td><span class="credentials">Mobilion2025!</span></td>
+                        <td class="notes">Largest dataset</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <div class="important">
-            <h3>Important Security Notice</h3>
+            <h3>Security Guidelines</h3>
             <ul style="margin-left: 20px;">
-                <li>Never share these credentials publicly</li>
-                <li>Service role keys bypass Row Level Security</li>
-                <li>Rotate keys regularly for security</li>
-                <li>Use environment variables in production</li>
+                <li>Change all passwords immediately upon first login</li>
+                <li>Enable 2FA on all platforms where available</li>
+                <li>Never share credentials via email or messaging apps</li>
+                <li>Use password manager for secure storage</li>
+                <li>Rotate API keys every 90 days</li>
             </ul>
         </div>
 
         <div class="footer">
-            <p>Last Updated: September 6, 2025 | Confidential - For Authorized Use Only</p>
+            <p>Last Updated: September 6, 2025 | Confidential - For Internal Use Only</p>
+            <p>Report any suspicious activity immediately</p>
         </div>
     </div>
 
@@ -322,23 +409,6 @@
                 console.error('Failed to copy: ', err);
             });
         }
-
-        // Mask sensitive data on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click-to-reveal for sensitive data if needed
-            const apiKeys = document.querySelectorAll('.api-key');
-            apiKeys.forEach(key => {
-                key.style.cursor = 'pointer';
-                key.title = 'Click to select all';
-                key.addEventListener('click', function() {
-                    const range = document.createRange();
-                    range.selectNodeContents(this);
-                    const selection = window.getSelection();
-                    selection.removeAllRanges();
-                    selection.addRange(range);
-                });
-            });
-        });
     </script>
 </body>
 </html>
